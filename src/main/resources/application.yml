@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: mango_diary
+  datasource:
+    url: ${POSTGRESQL_URL}
+    username: ${POSTGRESQL_USER}
+    password: ${POSTGRESQL_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+  mail:
+    host: smtp.gmail.com
+    port: ${SMTP_PORT}
+    username: mangolion2024@gmail.com
+    password: ${GOOGLE_APP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+jwt:
+  secret: ${JWT_SECRET}
+
+oauth2:
+  provider:
+    kakao:
+      client-id: ${KAKAO_CLIENT_ID}
+      login-uri: ${KAKAO_LOGIN_URI}
+      token-uri: ${KAKAO_TOKEN_URI}
+      info-uri: ${KAKAO_INFO_URI}
+      scope: ${KAKAO_SCOPE}
+gemini:
+  api:
+    key: ${GEMINI_API_KEY}
+    url: ${GEMINI_API_URL}
+  prompt:
+    emotion: ${EMOTION_PROMPT_TEMPLATE}
+    advice: ${ADVICE_PROMPT_TEMPLATE}
+    monthly-comment: ${MONTHLY_COMMENT_PROMPT_TEMPLATE}
